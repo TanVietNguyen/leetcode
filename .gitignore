@@ -1,0 +1,11 @@
+*.dSYM
+*.dSYM/
+*.out
+*.exe
+build/
+*.DS_Store
+# Ignore the entire VS Code folder by default to protect personal preferences
+.vscode/
+# BUT explicitly allow sharing useful team configurations if they exist
+!.vscode/extensions.json
+!.vscode/tasks.json
