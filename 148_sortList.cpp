@@ -10,7 +10,9 @@ using namespace std;
       ListNode(int x) : val(x), next(nullptr) {}
       ListNode(int x, ListNode *next) : val(x), next(next) {}
   };
-
+//To solve this problem, we can take the inpiration from merge sort algorithm.
+//There is one advantage of linklist data structure, we don't need to create new array to store the sorted elements,
+// we can just change the pointer of the nodes to sort the list, so the space complexity will be O(1).
 class Solution {
 public:
     ListNode* sortList(ListNode* head) {
@@ -37,7 +39,11 @@ public:
             right = right -> next;
             index ++;
         }
-        
+        //this is the mid node, where the current list is plit into two parts
+        currNode = right;
+        right = right -> next;  
+        currNode -> next = nullptr; 
+
         // 4 2 1 3
         left = sortList(left);
         right = sortList(right);
